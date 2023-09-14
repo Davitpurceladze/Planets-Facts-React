@@ -14,11 +14,16 @@ export default Header;
 
 const DivStyled = styled.div`
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   height: 85px;
-  padding-left: 32px;
+  padding-left: 35px;
   padding-right: 35px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const ParagraphStyled = styled.p`

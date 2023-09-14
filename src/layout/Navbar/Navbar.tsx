@@ -2,18 +2,16 @@ import styled from "styled-components";
 function Navbar() {
   return (
     <div>
-      <nav>
-        <UlStyled>
-          <DivStyled>MERCURY</DivStyled>
-          <DivStyled>VENUS</DivStyled>
-          <DivStyled>EARTH</DivStyled>
-          <DivStyled>MARS</DivStyled>
-          <DivStyled>JUPITER</DivStyled>
-          <DivStyled>SATURN</DivStyled>
-          <DivStyled>URANUS</DivStyled>
-          <DivStyled>NEPTUNE</DivStyled>
-        </UlStyled>
-      </nav>
+      <UlStyled>
+        <DivStyled>MERCURY</DivStyled>
+        <DivStyled>VENUS</DivStyled>
+        <DivStyled>EARTH</DivStyled>
+        <DivStyled>MARS</DivStyled>
+        <DivStyled>JUPITER</DivStyled>
+        <DivStyled>SATURN</DivStyled>
+        <DivStyled>URANUS</DivStyled>
+        <DivStyled>NEPTUNE</DivStyled>
+      </UlStyled>
     </div>
   );
 }
@@ -22,7 +20,14 @@ export default Navbar;
 
 const UlStyled = styled.ul`
   display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
   gap: 2rem;
+
+  @media (max-width: 600px) {
+    gap: 0.5rem;
+  }
 `;
 
 const DivStyled = styled.div`
@@ -58,5 +63,15 @@ const DivStyled = styled.div`
     opacity: 100%;
     transition: opacity 0.3s;
     cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+    &::before {
+      top: -5px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    font-size: 9px;
   }
 `;

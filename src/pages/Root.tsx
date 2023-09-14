@@ -26,4 +26,8 @@ const GlobalStyle = createGlobalStyle`
 const HrStyled = styled.hr`
   color: #ffffff;
   opacity: 20%;
+
+  @media (max-width: 768px) {
+    margin-top: 6rem;
+  }
 `;
