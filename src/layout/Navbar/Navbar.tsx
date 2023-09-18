@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 function Navbar() {
   return (
     <div>
@@ -27,6 +28,10 @@ const UlStyled = styled.ul`
 
   @media (max-width: 600px) {
     gap: 0.5rem;
+  }
+
+  @media (max-width: 375px) {
+    display: none;
   }
 `;
 

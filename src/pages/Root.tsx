@@ -7,7 +7,6 @@ function Root() {
     <div>
       <GlobalStyle />
       <Header />
-      <HrStyled />
     </div>
   );
 }
@@ -20,14 +19,5 @@ const GlobalStyle = createGlobalStyle`
     padding: 0px;
     background-color: #070724;
     background-image: url(${BackgroundImage});
-  }
-`;
-
-const HrStyled = styled.hr`
-  color: #ffffff;
-  opacity: 20%;
-
-  @media (max-width: 768px) {
-    margin-top: 6rem;
   }
 `;
