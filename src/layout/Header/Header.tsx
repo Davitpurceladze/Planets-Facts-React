@@ -8,7 +8,6 @@ function Header() {
       <DivStyled>
         <ParagraphStyled>THE PLANETS</ParagraphStyled>
         <Navbar />
-
         <HamburgerIconWrapper>
           <img src={HamburgerIcon} alt="HamburgerIcon" />
         </HamburgerIconWrapper>

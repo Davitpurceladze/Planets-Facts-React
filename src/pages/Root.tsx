@@ -1,12 +1,14 @@
 import Header from "../layout/Header/Header";
 import { createGlobalStyle, styled } from "styled-components";
 import BackgroundImage from "../assets/background-stars.svg";
+import { Outlet } from "react-router-dom";
 
 function Root() {
   return (
     <div>
       <GlobalStyle />
       <Header />
+      <Outlet />
     </div>
   );
 }
