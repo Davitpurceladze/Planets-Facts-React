@@ -4,10 +4,17 @@ import styled from "styled-components";
 import UseWindowDimensions from "../Hooks/GetWindowDimensions";
 import SourceIcon from "../assets/icon-source.svg";
 import Buttons from "../components/Buttons";
+import MobileButtons from "../components/MobileButtons";
 
 function Mercury() {
   //get window width
   const { width, height } = UseWindowDimensions();
+
+  const MobileButtonsVisibility = (width: number) => {
+    if (width < 375) {
+      return true;
+    } else return false;
+  };
 
   const getPlanetWidth = (width: number) => {
     if (width < 768 && width > 375) {
@@ -20,6 +27,8 @@ function Mercury() {
   return (
     <div>
       <MainContentContainer>
+        {MobileButtonsVisibility(width) ? <MobileButtons /> : null}
+
         <PlanetImg
           src={MercuryPlanet}
           alt="MercuryPlanet"
@@ -29,8 +38,8 @@ function Mercury() {
           }}
           width={getPlanetWidth(width)}
         />
-        <InformationContainer style={{ justifySelf: "start" }}>
-          <div>
+        <InformationContainer>
+          <AboutPlanet>
             <PlanetName>MERCURY</PlanetName>
             <PlanetInformation>
               Mercury is the smallest planet in the Solar System and the closest
@@ -43,9 +52,9 @@ function Mercury() {
             <WikipediaSource>
               Source: Wikipedia <img src={SourceIcon} alt="SourceIcon" />
             </WikipediaSource>
-          </div>
+          </AboutPlanet>
 
-          <Buttons />
+          {MobileButtonsVisibility(width) ? null : <Buttons />}
         </InformationContainer>
       </MainContentContainer>
       <div style={{ color: "white" }}>
@@ -85,6 +94,12 @@ const InformationContainer = styled.div`
     padding-left: 2rem;
     margin-top: 5rem;
   }
+
+  @media (max-width: 375px) {
+    display: grid;
+    grid-template-columns: 100%;
+    padding-right: 2rem;
+  }
 `;
 
 const PlanetImg = styled.img`
@@ -107,6 +122,11 @@ const PlanetName = styled.h1`
     font-size: 48px;
     line-height: 62.11px;
   }
+
+  @media (max-width: 375px) {
+    font-size: 40px;
+    line-height: 51.76px;
+  }
 `;
 
 const PlanetInformation = styled.p`
@@ -120,6 +140,11 @@ const PlanetInformation = styled.p`
     font-size: 11px;
     line-height: 25px;
   }
+
+  @media (max-width: 375px) {
+    text-align: center;
+    line-height: 22px;
+  }
 `;
 
 const WikipediaSource = styled.p`
@@ -131,5 +156,16 @@ const WikipediaSource = styled.p`
 
   @media (max-width: 768px) {
     font-size: 12px;
+  }
+
+  @media (max-width: 375px) {
+  }
+`;
+
+const AboutPlanet = styled.div`
+  @media (max-width: 375px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 `;
