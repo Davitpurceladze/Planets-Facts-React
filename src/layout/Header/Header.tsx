@@ -59,6 +59,6 @@ const HrStyled = styled.hr`
   opacity: 20%;
 
   @media (max-width: 768px) and (min-width: 376px) {
-    margin-top: 6rem;
+    margin-top: 4rem;
   }
 `;

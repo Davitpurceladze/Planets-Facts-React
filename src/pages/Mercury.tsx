@@ -3,6 +3,7 @@ import MercuryPlanet from "../assets/planet-mercury.svg";
 import styled from "styled-components";
 import UseWindowDimensions from "../Hooks/GetWindowDimensions";
 import SourceIcon from "../assets/icon-source.svg";
+import Buttons from "../components/Buttons";
 
 function Mercury() {
   //get window width
@@ -43,17 +44,8 @@ function Mercury() {
               Source: Wikipedia <img src={SourceIcon} alt="SourceIcon" />
             </WikipediaSource>
           </div>
-          <ButtonsContainer>
-            <Button>
-              <ButtonNumber>01</ButtonNumber> OVERVIEW{" "}
-            </Button>
-            <Button>
-              <ButtonNumber>02</ButtonNumber> INTERNAL STRUCTURE
-            </Button>
-            <Button>
-              <ButtonNumber>03</ButtonNumber> SURFACE GEOLOGY
-            </Button>
-          </ButtonsContainer>
+
+          <Buttons />
         </InformationContainer>
       </MainContentContainer>
       <div style={{ color: "white" }}>
@@ -90,12 +82,18 @@ const InformationContainer = styled.div`
   @media (max-width: 768px) {
     display: grid;
     grid-template-columns: 50% 50%;
+    padding-left: 2rem;
+    margin-top: 5rem;
   }
 `;
 
 const PlanetImg = styled.img`
   justify-self: center;
   align-self: center;
+
+  @media (max-width: 768px) {
+    margin-top: 5rem;
+  }
 `;
 
 const PlanetName = styled.h1`
@@ -104,6 +102,11 @@ const PlanetName = styled.h1`
   line-height: 103.52px;
   font-family: "Antonio";
   font-weight: 400;
+
+  @media (max-width: 768px) {
+    font-size: 48px;
+    line-height: 62.11px;
+  }
 `;
 
 const PlanetInformation = styled.p`
@@ -112,6 +115,11 @@ const PlanetInformation = styled.p`
   line-height: 25px;
   font-family: "League Spartan";
   font-weight: 400;
+
+  @media (max-width: 768px) {
+    font-size: 11px;
+    line-height: 25px;
+  }
 `;
 
 const WikipediaSource = styled.p`
@@ -120,33 +128,8 @@ const WikipediaSource = styled.p`
   line-height: 25px;
   font-family: "League Spartan";
   font-weight: 400;
-`;
 
-const ButtonsContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-`;
-
-const Button = styled.button`
-  background-color: rgba(0, 0, 0, 0);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  height: 48px;
-  width: 100%;
-  color: #ffffff;
-  font-family: "League Spartan";
-  font-size: 12px;
-  font-weight: 700;
-  line-height: 25px;
-  letter-spacing: 2.57px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding-left: 1.5rem;
-  cursor: pointer;
-  gap: 1rem;
-`;
-
-const ButtonNumber = styled.span`
-  opacity: 50%;
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
 `;
