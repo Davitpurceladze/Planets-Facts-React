@@ -5,12 +5,13 @@ import UseWindowDimensions from "../Hooks/GetWindowDimensions";
 import SourceIcon from "../assets/icon-source.svg";
 import Buttons from "../components/Buttons";
 import MobileButtons from "../components/MobileButtons";
+import FactsAboutPlanets from "../components/FactsAboutPlanets";
 
 function Mercury() {
   //get window width
   const { width, height } = UseWindowDimensions();
 
-  const MobileButtonsVisibility = (width: number) => {
+  const buttonsDependingDimension = (width: number) => {
     if (width < 375) {
       return true;
     } else return false;
@@ -27,7 +28,7 @@ function Mercury() {
   return (
     <div>
       <MainContentContainer>
-        {MobileButtonsVisibility(width) ? <MobileButtons /> : null}
+        {buttonsDependingDimension(width) ? <MobileButtons /> : null}
 
         <PlanetImg
           src={MercuryPlanet}
@@ -54,15 +55,11 @@ function Mercury() {
             </WikipediaSource>
           </AboutPlanet>
 
-          {MobileButtonsVisibility(width) ? null : <Buttons />}
+          {buttonsDependingDimension(width) ? null : <Buttons />}
         </InformationContainer>
       </MainContentContainer>
-      <div style={{ color: "white" }}>
-        <div>ROTATION TIME</div>
-        <div>REVOLUTION TIME</div>
-        <div>RADIUS</div>
-        <div>AVERAGE TEMP.</div>
-      </div>
+
+      <FactsAboutPlanets />
     </div>
   );
 }
@@ -99,6 +96,7 @@ const InformationContainer = styled.div`
     display: grid;
     grid-template-columns: 100%;
     padding-right: 2rem;
+    margin-top: 2.5rem;
   }
 `;
 

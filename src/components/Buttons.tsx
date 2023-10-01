@@ -54,6 +54,10 @@ const Button = styled.button`
     font-size: 9px;
     letter-spacing: 1.93px;
   }
+
+  &:hover {
+    background-color: rgba(216, 216, 216, 0.2);
+  }
 `;
 
 const ButtonNumber = styled.span`
