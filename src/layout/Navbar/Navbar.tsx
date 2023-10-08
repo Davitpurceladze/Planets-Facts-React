@@ -1,17 +1,34 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
     <div>
       <UlStyled>
-        <DivStyled>MERCURY</DivStyled>
-        <DivStyled>VENUS</DivStyled>
-        <DivStyled>EARTH</DivStyled>
-        <DivStyled>MARS</DivStyled>
-        <DivStyled>JUPITER</DivStyled>
-        <DivStyled>SATURN</DivStyled>
-        <DivStyled>URANUS</DivStyled>
-        <DivStyled>NEPTUNE</DivStyled>
+        <Link to="Mercury" style={{ textDecoration: "none" }}>
+          <DivStyled>MERCURY</DivStyled>
+        </Link>
+        <Link to="Venus" style={{ textDecoration: "none" }}>
+          <DivStyled>VENUS</DivStyled>
+        </Link>
+        <Link to="Earth" style={{ textDecoration: "none" }}>
+          <DivStyled>EARTH</DivStyled>
+        </Link>
+        <Link to="Mars" style={{ textDecoration: "none" }}>
+          <DivStyled>MARS</DivStyled>
+        </Link>
+        <Link to="Jupiter" style={{ textDecoration: "none" }}>
+          <DivStyled>JUPITER</DivStyled>
+        </Link>
+        <Link to="Saturn" style={{ textDecoration: "none" }}>
+          <DivStyled>SATURN</DivStyled>
+        </Link>
+        <Link to="Uranus" style={{ textDecoration: "none" }}>
+          <DivStyled>URANUS</DivStyled>
+        </Link>
+        <Link to="Neptune" style={{ textDecoration: "none" }}>
+          <DivStyled>NEPTUNE</DivStyled>
+        </Link>
       </UlStyled>
     </div>
   );
@@ -46,6 +63,7 @@ const DivStyled = styled.div`
   text-align: center;
   transition: 0.3s;
   position: relative;
+  text-decoration: none;
 
   &::before {
     content: "";

@@ -5,6 +5,9 @@ import MobileButtons from "../components/MobileButtons";
 import FactsAboutPlanets from "../components/FactsAboutPlanets";
 import InformationAboutPlanets from "../components/InformationAboutPlanets";
 
+import { useLoaderData } from "react-router-dom";
+import PlanetDataInterface from "../PlanetDataInterface";
+
 function Mercury() {
   //get window width
   const { width, height } = UseWindowDimensions();
@@ -22,6 +25,10 @@ function Mercury() {
       return "111px";
     }
   };
+
+  const PlanetData = useLoaderData() as PlanetDataInterface;
+
+  console.log(PlanetData);
 
   return (
     <div>

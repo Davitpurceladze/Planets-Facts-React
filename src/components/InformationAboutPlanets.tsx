@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import SourceIcon from "../assets/icon-source.svg";
 import Buttons from "./Buttons";
+import PlanetDataInterface from "../PlanetDataInterface";
 
 interface Props {
   buttonsDependingDimension: (width: number) => boolean;

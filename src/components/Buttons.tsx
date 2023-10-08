@@ -1,10 +1,25 @@
 import styled from "styled-components";
+import Data from "../db/data.json";
+import { useState } from "react";
+import { getPlanetInformation } from "../Hooks/GetPlanetInformation";
+
+// const getPlanetInformation = Data.filter((planet) => {
+//   return planet.name == "Mercury";
+// });
 
 function Buttons() {
+  const data = getPlanetInformation("Venus");
+
+  // const [data, setData] = useState(Data);
   return (
     <>
       <ButtonsContainer>
-        <Button>
+        <Button
+          onClick={() => {
+            // console.log(getPlanetInformation);
+            console.log(data);
+          }}
+        >
           <ButtonNumber>01</ButtonNumber> OVERVIEW{" "}
         </Button>
         <Button>
