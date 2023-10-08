@@ -1,9 +1,15 @@
 import Header from "../layout/Header/Header";
 import { createGlobalStyle, styled } from "styled-components";
 import BackgroundImage from "../assets/background-stars.svg";
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 function Root() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    navigate("/Mercury");
+  }, []);
   return (
     <div>
       <GlobalStyle />

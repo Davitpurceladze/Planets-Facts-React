@@ -5,7 +5,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Root from "./pages/Root";
-import Mercury from "./pages/Mercury";
+import Planet from "./pages/Planet";
 import { getPlanetInformation } from "./Hooks/GetPlanetInformation";
 
 const router = createBrowserRouter(
@@ -13,7 +13,7 @@ const router = createBrowserRouter(
     <Route path="/" element={<Root />}>
       <Route
         path=":planetName"
-        element={<Mercury />}
+        element={<Planet />}
         loader={async ({ params }) => {
           return getPlanetInformation(params.planetName);
         }}
