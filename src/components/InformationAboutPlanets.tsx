@@ -6,6 +6,7 @@ import PlanetDataInterface from "../PlanetDataInterface";
 interface Props {
   buttonsDependingDimension: (width: number) => boolean;
   width: number;
+  data: PlanetDataInterface;
 }
 
 function InformationAboutPlanets(props: Props) {
@@ -13,13 +14,14 @@ function InformationAboutPlanets(props: Props) {
     <>
       <InformationContainer>
         <AboutPlanet>
-          <PlanetName>MERCURY</PlanetName>
+          <PlanetName>{props.data.name}</PlanetName>
           <PlanetInformation>
-            Mercury is the smallest planet in the Solar System and the closest
+            {/* Mercury is the smallest planet in the Solar System and the closest
             to the Sun. Its orbit around the Sun takes 87.97 Earth days, the
             shortest of all the Sun's planets. Mercury is one of four
             terrestrial planets in the Solar System, and is a rocky body like
-            Earth.
+            Earth. */}
+            {props.data.overview.content}
           </PlanetInformation>
           {/* click on wikipedia button links to other page */}
           <WikipediaSource>
@@ -65,6 +67,7 @@ const PlanetName = styled.h1`
   line-height: 103.52px;
   font-family: "Antonio";
   font-weight: 400;
+  text-transform: uppercase;
 
   @media (max-width: 768px) {
     font-size: 48px;

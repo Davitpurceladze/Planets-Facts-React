@@ -1,27 +1,32 @@
 import styled from "styled-components";
+import PlanetDataInterface from "../PlanetDataInterface";
 
-function FactsAboutPlanets() {
+interface Props {
+  data: PlanetDataInterface;
+}
+
+function FactsAboutPlanets(props: Props) {
   return (
     <>
       <InterestingFactsContainer>
         <InterestingFacts>
           <FactTitle>ROTATION TIME</FactTitle>
-          <Fact>58.6 DAYS</Fact>
+          <Fact>{props.data.rotation}</Fact>
         </InterestingFacts>
 
         <InterestingFacts>
           <FactTitle>REVOLUTION TIME</FactTitle>
-          <Fact>87.97 DAYS</Fact>
+          <Fact>{props.data.revolution}</Fact>
         </InterestingFacts>
 
         <InterestingFacts>
           <FactTitle>RADIUS</FactTitle>
-          <Fact>2,439.7 KM</Fact>
+          <Fact>{props.data.radius}</Fact>
         </InterestingFacts>
 
         <InterestingFacts>
           <FactTitle>AVERAGE TEMP.</FactTitle>
-          <Fact>430°C</Fact>
+          <Fact>{props.data.temperature}</Fact>
         </InterestingFacts>
       </InterestingFactsContainer>
     </>
@@ -100,6 +105,7 @@ const Fact = styled.p`
   font-family: "Antonio";
   font-weight: 400;
   margin: 10px 0px 0px 23px;
+  text-transform: uppercase;
 
   @media (max-width: 768px) {
     font-size: 24px;

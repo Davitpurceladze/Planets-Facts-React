@@ -48,10 +48,11 @@ function Mercury() {
         <InformationAboutPlanets
           buttonsDependingDimension={buttonsDependingDimension}
           width={width}
+          data={PlanetData}
         />
       </MainContentContainer>
 
-      <FactsAboutPlanets />
+      <FactsAboutPlanets data={PlanetData} />
     </div>
   );
 }
